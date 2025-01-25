@@ -10,6 +10,15 @@
     --color-slate900: hsl(202, 55%, 16%);
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 body {
     font-size: 16px;
     font-family: "Plus Jakarta Sans", serif;
@@ -30,28 +39,64 @@ h2, strong {
     justify-content: center;
 
     background-color: var(--color-white, hsl(0, 0%, 100%));
+    border-radius: 1rem;
 
-    max-width: fit-content;
+    max-width: max-content;
     height: auto;
 
     margin: auto;
-    padding: 1rem 2rem;
+}
+
+.container {
+    display: flex;
+
+    align-items: stretch;
+    justify-content: center;
+
+    background-color: var(--color-white, hsl(0, 0%, 100%));
+
     border-radius: 1rem;
+
+    height: auto;
+    max-width: 900px;
+    margin: auto;
 }
 
 .calculator {
+    display: flex;
+    flex: 45;
+
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    padding-right: 1.5rem;
+    background-color: var(--color-white, hsl(0, 0%, 100%));
+
+    border-radius: 1rem;
+
+    padding: 1rem;
 }
 
 .results {
+    display: flex;
+    flex: 55;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
     background-color: var(--color-slate900, hsl(202, 55%, 16%));
 
-    height: 300px;
-
+    padding-right: 1.5rem;
     padding-left: 1.5rem;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 4rem;
+
+    & p {
+        text-align: center;
+    }
 }
 
 .attribution {
