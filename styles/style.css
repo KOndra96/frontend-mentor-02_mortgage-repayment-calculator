@@ -1,13 +1,58 @@
-.container {
-    height: 100vh;
-    display: flex;
-    align-items: center;
+:root {
+    --color-white: hsl(0, 0%, 100%);
+    --color-lime: hsl(61, 70%, 52%);
+    --color-red: hsl(4, 69%, 50%);
 
-    max-width: 1280px;
-
-    margin: auto;
+    --color-slate100: hsl(202, 86%, 94%);
+    --color-slate300: hsl(203, 41%, 72%);
+    --color-slate500: hsl(200, 26%, 54%);
+    --color-slate700: hsl(200, 24%, 40%);
+    --color-slate900: hsl(202, 55%, 16%);
 }
 
+body {
+    font-size: 16px;
+    font-family: "Plus Jakarta Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+
+    background-color: var(--color-slate100, hsl(202, 86%, 94%));
+}
+
+h2, strong {
+    font-weight: 700;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--color-white, hsl(0, 0%, 100%));
+
+    max-width: fit-content;
+    height: auto;
+
+    margin: auto;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+}
+
+.calculator {
+    align-items: center;
+    justify-content: center;
+
+    padding-right: 1.5rem;
+}
+
+.results {
+    background-color: var(--color-slate900, hsl(202, 55%, 16%));
+
+    height: 300px;
+
+    padding-left: 1.5rem;
+}
 
 .attribution {
     font-size: 11px;
