@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+  <link rel="stylesheet" href="./styles/normalize.css">
+  <link rel="stylesheet" href="./styles/style.css">
+
+  <script defer src="./js/script.js"></script>
+</head>
+
+<body>
+
+  <main>
+    <div class="container">
+      <div class="calculator">
+
+        <form>
+          <p>
+            <h2>Mortgage calculator</h2>
+            <input type="reset" value="Clear all">
+          </p>
+
+          <p>
+            <label for="amount">Mortgage Amount</label>
+            <input type="number" name="amount" id="amount">
+          </p>
+
+          <p>
+            <label for="term">Mortgage Term</label>
+            <input type="number" name="term" id="term">
+          </p>
+
+          <p>
+            <label for="rate">Interest Rate</label>
+            <input type="number" name="rate" id="rate">
+          </p>
+
+          <p>
+            <p>Mortgage type</p>
+            <label for="repayment">Repayment</label>
+            <input type="radio" name="type" id="repayment" value="Repayment">
+            <label for="interest">Interest only</label>
+            <input type="radio" name="type" id="interest" value="Interest only">
+          </p>
+
+          <p>
+            <input type="submit" value="Calculate Repayments">
+          </p>
+
+        </form>
+      </div>
+      <div class="results">
+        <header>
+          <h2>Results shown here</h2>
+        </header>
+        <p>Complete the form and click "calculate repayments" to see what your monthly repayments would be.</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+
+</html>
