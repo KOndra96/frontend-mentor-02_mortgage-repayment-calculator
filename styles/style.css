@@ -8,20 +8,24 @@
     --color-slate300: hsl(203, 41%, 72%);
     --color-slate500: hsl(200, 26%, 54%);
     --color-slate700: hsl(200, 24%, 40%);
+    --color-slate700-transparent: hsla(200, 24%, 40%, 0.5);
     --color-slate900: hsl(202, 55%, 16%);
+    --color-result-box: hsl(202.29, 55.56%, 12.35%);
+
 }
 
-html, body {
+html,
+body {
+    display: flex;
+    flex-direction: column;
+
     height: 100%;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
+
     align-items: center;
     justify-content: center;
-}
 
-body {
     font-size: 16px;
     font-family: "Plus Jakarta Sans", serif;
     font-weight: 500;
@@ -30,27 +34,18 @@ body {
     background-color: var(--color-slate100, hsl(202, 86%, 94%));
 }
 
-h2, strong {
-    font-weight: 700;
-}
-
-h2 {
-    font-size: 18px;
-    margin: 0;
-}
-
 .container {
     display: flex;
+
     width: 100%;
-    /* min-width: 20rem; */
     max-width: 56rem;
     margin: auto;
-    
+
     border-radius: 1rem;
-    /* overflow: hidden; */
-    background-color: var(--color-white, hsl(0, 0%, 100%));
 
     font-size: 14px;
+
+    background-color: var(--color-white, hsl(0, 0%, 100%));
 
     & fieldset {
         border: none;
@@ -67,33 +62,43 @@ h2 {
     & h2 {
         color: var(--color-slate900, hsl(202, 55%, 16%));
     }
-    
-    & input, button {
-        color: var(--color-slate900, hsl(202, 55%, 16%));
-        font-weight: 700;
+
+    & input,
+    button {
+        cursor: pointer;
+
         margin-top: 0.5rem;
+
         border: 1px solid var(--color-slate700, hsl(200, 24%, 40%));
         border-radius: 0.25rem;
+
+        font-weight: 700;
+
+        color: var(--color-slate900, hsl(202, 55%, 16%));
 
         &[type=reset] {
             margin-top: auto;
             margin-bottom: auto;
-
-            color: var(--color-slate700, hsl(200, 24%, 40%));
-            background-color: transparent;
-            border: none;
             padding: 0;
+
+            border: none;
             border-bottom: 1px solid var(--color-slate700, hsl(200, 24%, 40%));
             border-radius: 0;
 
+            color: var(--color-slate700, hsl(200, 24%, 40%));
+            background-color: transparent;
 
-            &:hover, &:focus, &:active {
+            &:hover,
+            &:focus,
+            &:active {
                 color: var(--color-slate900, hsl(202, 55%, 16%));
             }
         }
 
         &[type=number] {
-            &:hover, &:focus, &:active {
+            &:hover,
+            &:focus,
+            &:active {
                 border: 1px solid var(--color-slate900, hsl(202, 55%, 16%));
             }
         }
@@ -101,23 +106,30 @@ h2 {
         &[type=submit] {
             display: flex;
             align-items: center;
+            
+            width: fit-content;
+
             padding: 0.5rem;
             padding-left: 2rem;
             padding-right: 2rem;
+            
+            border: none;
+            border-radius: 3rem;
+
             font-weight: 700;
-            width: fit-content;
 
             color: var(--color-slate900, hsl(202, 55%, 16%));
             background-color: var(--color-lime, hsl(61, 70%, 52%));
-            border: none;
-            border-radius: 3rem;
 
             & img {
                 padding-right: 0.5rem;
             }
 
-            &:hover, &:focus, &:active {
+            &:hover,
+            &:focus,
+            &:active {
                 cursor: pointer;
+
                 background-color: var(--color-lime-transparent, hsla(61, 70%, 52%, 0.5));
             }
         }
@@ -125,52 +137,52 @@ h2 {
         &[type=radio] {
             margin-top: auto;
             margin-bottom: auto;
-            
-            transform: scale(1.5);
             margin-left: 0.25rem;
             margin-right: 0.75rem;
+
+            transform: scale(1.5);
         }
     }
 
     & label.choice {
-        padding: 0.75rem;
-        width: 100%;
         align-items: center;
 
-        &:hover, &:focus, &:active {
+        width: 100%;
+
+        padding: 0.75rem;
+
+        &:hover,
+        &:focus,
+        &:active {
             cursor: pointer;
-        }  
+        }
     }
 
     & .radio-container {
         display: flex;
+        
         height: 2.5rem;
-        font-weight: 700;
+
         margin-top: 0.5rem;
+        
         border: 1px solid var(--color-slate700, hsl(200, 24%, 40%));
         border-radius: 0.25rem;
+
+        font-weight: 700;
+
         color: var(--color-slate900, hsl(202, 55%, 16%));
 
-        &:hover, &:focus, &:active {
+        &:hover,
+        &:focus,
+        &:active {
             cursor: pointer;
+
             border-color: var(--color-lime, hsl(61, 70%, 52%));
-        }  
+        }
     }
 
     & fieldset {
         margin-bottom: 0.5rem;
-
-        &.radios {
-            
-        }
-    }
-
-    & .form-header {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 0.5rem;
-        margin-bottom: 1rem;
-
     }
 
     & fieldset:not(.form-header) {
@@ -182,11 +194,22 @@ h2 {
         }
     }
 
+    & .form-header {
+        display: flex;
+        justify-content: space-between;
+
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+
+    }
+
     .nextto {
-        width: 100%;
-        margin-right: 0;
         display: flex;
         flex-direction: row;
+
+        width: 100%;
+        
+        margin-right: 0;
 
         & fieldset {
             display: flex;
@@ -197,57 +220,99 @@ h2 {
 
 .results {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
     width: 50%;
+
     padding: 2rem;
-
-    color: var(--color-slate500, hsl(200, 24%, 40%));
-
-    background-color: var(--color-slate900, hsl(200, 26%, 54%));
 
     border-radius: 1rem;
     border-bottom-left-radius: 3rem;
     border-top-left-radius: 0;
 
+    color: var(--color-slate300, hsl(203, 41%, 72%));
+    background-color: var(--color-slate900, hsl(200, 26%, 54%));
+
     & h2 {
         color: var(--color-white, hsl(0, 0%, 100%));
     }
+
     & p {
         text-align: center;
     }
-}
 
-input {
-    cursor: pointer;
-}
+    & .non-counted {
+        display: flex;
+        flex-direction: column;
+        
+        justify-content: center;
+        text-align: center;
 
-.attribution {
-    margin-top: 2rem;
-    font-size: 11px;
-    text-align: center;
-}
+        height: 100%;
+        width: 100%;
 
-.attribution a {
-    color: hsl(228, 45%, 44%);
+    }
+
+    & .counted {
+        align-content: flex-start;
+
+        text-align: left;
+
+        & p {
+            text-align: left;
+        }
+
+        & .result-box {
+            padding: 1rem 2rem;
+            margin-top: 2.25rem;;
+
+            border-radius: 0.25rem;
+            box-shadow: 0 -3px var(--color-lime, hls(61, 70%, 52%));
+
+            color: var(--color-slate300, hsl(203, 41%, 72%));
+            background-color: var(--color-result-box, hsl(202.29, 55.56%, 12.35%));
+
+            & hr {
+                height: 1px;
+
+                border: none;
+
+                background-color: var(--color-slate700-transparent, hsla(200, 24%, 40%, 0.5));
+            }
+
+            & .monthly {
+                font-size: 36px;
+                font-weight: 700;
+                line-height: 60px;
+
+                color: var(--color-lime, hsl(61, 70%, 52%));
+            }
+
+            & .total {
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 34px;
+
+                color: var(--color-white, hsl(0, 0%, 100%));
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 870px) {
     body, html {
-        /* justify-content: flex-start; */
         justify-content: flex-start;
     }
 
     .container {
-        background-color: var(--color-white, hsl(0, 0%, 100%));
         flex-wrap: wrap;
         flex-shrink: 1;
+        
+        background-color: var(--color-white, hsl(0, 0%, 100%));
     }
 
     .calculator, .results {
         width: 100%;
+
         border-radius: 0;
     }
 
@@ -257,6 +322,7 @@ input {
         padding-left: 0;
         padding-right: 0;
     }
+    
     fieldset {
         margin-left: 0.25rem;
         margin-right: 0.25rem;
@@ -272,8 +338,6 @@ input {
     }
 
     form {
-        /* display: flex;
-        flex-direction: column; */
         width: 100%;
     }
 }
@@ -282,4 +346,27 @@ input {
     .nextto {
         flex-wrap: wrap;
     }
+}
+
+h2 {
+    margin: 0;
+
+    font-size: 18px;
+}
+
+h2,
+strong {
+    font-weight: 700;
+}
+
+
+.attribution {
+    margin-top: 2rem;
+
+    text-align: center;
+    font-size: 11px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
 }
