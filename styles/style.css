@@ -234,7 +234,7 @@ input {
     color: hsl(228, 45%, 44%);
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 870px) {
     body, html {
         /* justify-content: flex-start; */
         justify-content: flex-start;
