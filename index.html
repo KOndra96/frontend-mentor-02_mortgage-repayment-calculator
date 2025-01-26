@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
 
@@ -17,7 +16,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -25,7 +25,7 @@
   <main>
     <div class="container">
       <div class="calculator">
-        <form>
+        <form onsubmit="event.preventDefault();">
           <fieldset class="form-header">
             <h2>Mortgage Calculator</h2>
             <input type="reset" value="Clear all">
@@ -48,48 +48,22 @@
           </div>
 
           <fieldset class="radios">
-            <legend>Mortgage type</legend>           
-              <div class="radio-container"><label class="choice"><input type="radio" name="type" value="repayment" required>
-              Repayment</label></div>     
-              <div class="radio-container"><label class="choice"><input type="radio" name="type" value="interest-only" required>
-              Interest only</label></div>
+            <legend>Mortgage type</legend>
+            <div class="radio-container"><label class="choice"><input type="radio" name="type" value="repayment"
+                  required>
+                Repayment</label></div>
+            <div class="radio-container"><label class="choice"><input type="radio" name="type" value="interest-only"
+                  required>
+                Interest only</label></div>
           </fieldset>
 
           <fieldset>
-            <button type="submit"><img src="./assets/images/icon-calculator.svg" alt="Calculator icon">Calculate repayments</button>
+            <button type="submit"><img src="./assets/images/icon-calculator.svg" alt="Calculator icon">Calculate
+              repayments</button>
           </fieldset>
         </form>
       </div>
       <div class="results">
-        <!-- <div class="non-counted">
-          <header>
-            <img src="./assets/images/illustration-empty.svg" alt="Empty form image">
-            <h2>Results shown here</h2>
-          </header>
-          <p>Complete the form and click "calculate repayments" to see what your monthly repayments would be.</p>
-          <div class="attribution">
-            Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-            Coded by <a href="https://github.com/KOndra96">KOndra96</a>.
-          </div>
-        </div> -->
-        <div class="counted">
-          <header>
-            <h2>Your results</h2>
-          </header>
-          <p>Your results are shown below based on the information you provided. To adjust the results, edit the form and click "calculate repayments" again.</p>
-          <div class="result-box">
-            <p>Your monthly repayments<br>
-              <span class="monthly">£1,000.00</span></p>
-            <hr>
-            <p>Total you'll repay over the term<br>
-              <span class="total">£500,000.00</span>
-            </p>
-          </div>
-          <div class="attribution">
-            Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-            Coded by <a href="https://github.com/KOndra96">KOndra96</a>.
-          </div>
-        </div>
       </div>
     </div>
   </main>
