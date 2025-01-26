@@ -231,23 +231,34 @@ input {
         flex-wrap: wrap;
     }
 
-    .calculator, .results {
+    .container, .calculator, .results {
         width: 100%;
-        border-radius: 1rem;
+        border-radius: 0;
     }
 
     .calculator {
         .nextto fieldset {
             flex-basis: 50%;
+            flex: 1;
         }
     }
 
-    .results {
-        border-top-right-radius: 0;
-        border-top-left-radius: 0;
-    }
-
     form {
+        display: flex;
+        flex-direction: column;
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .container, .calculator, .results {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    fieldset {
+        margin-left: 0.1rem;
+        margin-right: 0.1rem;
+        padding-left: 0.1rem;
+        padding-right: 0.1rem;
     }
 }
