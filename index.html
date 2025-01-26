@@ -25,7 +25,6 @@
   <main>
     <div class="container">
       <div class="calculator">
-
         <form>
           <fieldset class="form-header">
             <h2>Mortgage Calculator</h2>
@@ -34,25 +33,25 @@
 
           <fieldset>
             <label for="amount">Mortgage Amount</label>
-            <input type="number" name="amount" id="amount">
+            <input type="number" name="amount" id="amount" required>
           </fieldset>
 
           <div class="nextto">
             <fieldset>
               <label for="term">Mortgage Term</label>
-              <input type="number" name="term" id="term">
+              <input type="number" name="term" id="term" required>
             </fieldset>
             <fieldset>
               <label for="rate">Interest Rate</label>
-              <input type="number" name="rate" id="rate">
+              <input type="number" name="rate" id="rate" required>
             </fieldset>
           </div>
 
           <fieldset class="radios">
             <legend>Mortgage type</legend>           
-              <div class="radio-container"><label class="choice"><input type="radio" name="type" value="repayment">
+              <div class="radio-container"><label class="choice"><input type="radio" name="type" value="repayment" required>
               Repayment</label></div>     
-              <div class="radio-container"><label class="choice"><input type="radio" name="type" value="interest-only">
+              <div class="radio-container"><label class="choice"><input type="radio" name="type" value="interest-only" required>
               Interest only</label></div>
           </fieldset>
 
@@ -68,7 +67,7 @@
         </header>
         <p>Complete the form and click "calculate repayments" to see what your monthly repayments would be.</p>
         <div class="attribution">
-          <br><br><br>Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
           Coded by <a href="https://github.com/KOndra96">KOndra96</a>.
         </div>
       </div>
