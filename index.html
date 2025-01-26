@@ -27,42 +27,43 @@
       <div class="calculator">
 
         <form>
-          <p>
-            <h2>Mortgage calculator</h2>
+          <fieldset class="form-header">
+            <h2>Mortgage Calculator</h2>
             <input type="reset" value="Clear all">
-          </p>
+          </fieldset>
 
-          <p>
+          <fieldset>
             <label for="amount">Mortgage Amount</label>
             <input type="number" name="amount" id="amount">
-          </p>
+          </fieldset>
 
-          <p>
-            <label for="term">Mortgage Term</label>
-            <input type="number" name="term" id="term">
-          </p>
+          <div class="nextto">
+            <fieldset>
+              <label for="term">Mortgage Term</label>
+              <input type="number" name="term" id="term">
+            </fieldset>
+            <fieldset>
+              <label for="rate">Interest Rate</label>
+              <input type="number" name="rate" id="rate">
+            </fieldset>
+          </div>
 
-          <p>
-            <label for="rate">Interest Rate</label>
-            <input type="number" name="rate" id="rate">
-          </p>
+          <fieldset class="radios">
+            <legend>Mortgage type</legend>           
+              <div class="radio-container"><label class="choice"><input type="radio" name="type" value="repayment">
+              Repayment</label></div>     
+              <div class="radio-container"><label class="choice"><input type="radio" name="type" value="interest-only">
+              Interest only</label></div>
+          </fieldset>
 
-          <p>
-            <p>Mortgage type</p>
-            <label for="repayment">Repayment</label>
-            <input type="radio" name="type" id="repayment" value="Repayment">
-            <label for="interest">Interest only</label>
-            <input type="radio" name="type" id="interest" value="Interest only">
-          </p>
-
-          <p>
-            <input type="submit" value="Calculate Repayments">
-          </p>
-
+          <fieldset>
+            <button type="submit"><img src="./assets/images/icon-calculator.svg" alt="Calculator icon">Calculate repayments</button>
+          </fieldset>
         </form>
       </div>
       <div class="results">
         <header>
+          <img src="./assets/images/illustration-empty.svg" alt="Empty form image">
           <h2>Results shown here</h2>
         </header>
         <p>Complete the form and click "calculate repayments" to see what your monthly repayments would be.</p>

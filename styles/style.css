@@ -1,6 +1,7 @@
 :root {
     --color-white: hsl(0, 0%, 100%);
     --color-lime: hsl(61, 70%, 52%);
+    --color-lime-transparent: hsla(61, 70%, 52%, 0.5);
     --color-red: hsl(4, 69%, 50%);
 
     --color-slate100: hsl(202, 86%, 94%);
@@ -22,7 +23,6 @@ html, body {
 body {
     font-size: 16px;
     font-family: "Plus Jakarta Sans", serif;
-    font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
 
@@ -33,70 +33,187 @@ h2, strong {
     font-weight: 700;
 }
 
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background-color: var(--color-white, hsl(0, 0%, 100%));
-    border-radius: 1rem;
-
-    max-width: max-content;
-    height: auto;
-
-    margin: auto;
+h2 {
+    font-size: 18px;
+    margin: 0;
 }
 
 .container {
     display: flex;
-
-    align-items: stretch;
-    justify-content: center;
-
+    max-width: 56rem;
+    
+    border-radius: 1rem;
+    overflow: hidden;
     background-color: var(--color-white, hsl(0, 0%, 100%));
 
-    border-radius: 1rem;
+    font-size: 14px;
 
-    height: auto;
-    max-width: 900px;
-    margin: auto;
+    & fieldset {
+        border: none;
+    }
 }
 
 .calculator {
     display: flex;
-    flex: 45;
+    width: 50%;
+    padding: 1.25rem;
 
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    color: var(--color-slate700, hsl(200, 24%, 40%));
 
-    background-color: var(--color-white, hsl(0, 0%, 100%));
+    & h2 {
+        color: var(--color-slate900, hsl(202, 55%, 16%));
+    }
+    
+    & input, button {
+        margin-top: 0.5rem;
+        border: 1px solid var(--color-slate700, hsl(200, 24%, 40%));
+        border-radius: 0.25rem;
 
-    border-radius: 1rem;
+        &[type=reset] {
+            margin-top: auto;
+            margin-bottom: auto;
 
-    padding: 1rem;
+            color: var(--color-slate700, hsl(200, 24%, 40%));
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            border-bottom: 1px solid var(--color-slate700, hsl(200, 24%, 40%));
+            border-radius: 0;
+
+
+            &:hover, &:focus, &:active {
+                color: var(--color-slate900, hsl(202, 55%, 16%));
+            }
+        }
+
+        &[type=number] {
+            &:hover, &:focus, &:active {
+                border: 1px solid var(--color-slate900, hsl(202, 55%, 16%));
+            }
+        }
+
+        &[type=submit] {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            font-weight: 700;
+            width: fit-content;
+
+            color: var(--color-slate900, hsl(202, 55%, 16%));
+            background-color: var(--color-lime, hsl(61, 70%, 52%));
+            border: none;
+            border-radius: 3rem;
+
+            & img {
+                padding-right: 0.5rem;
+            }
+
+            &:hover, &:focus, &:active {
+                cursor: pointer;
+                background-color: var(--color-lime-transparent, hsla(61, 70%, 52%, 0.5));
+            }
+        }
+
+        &[type=radio] {
+            margin-top: auto;
+            margin-bottom: auto;
+            
+            transform: scale(1.5);
+            margin-left: 0.25rem;
+            margin-right: 0.75rem;
+        }
+    }
+
+    & label.choice {
+        padding: 0.75rem;
+        width: 100%;
+        align-items: center;
+
+        &:hover, &:focus, &:active {
+            cursor: pointer;
+        }  
+    }
+
+    & .radio-container {
+        display: flex;
+        height: 2.5rem;
+        font-weight: 700;
+        margin-top: 0.5rem;
+        border: 1px solid var(--color-slate700, hsl(200, 24%, 40%));
+        border-radius: 0.25rem;
+        color: var(--color-slate900, hsl(202, 55%, 16%));
+
+        &:hover, &:focus, &:active {
+            cursor: pointer;
+            border-color: var(--color-lime, hsl(61, 70%, 52%));
+        }  
+    }
+
+    & fieldset {
+        margin-bottom: 0.5rem;
+
+        &.radios {
+            
+        }
+    }
+
+    & .form-header {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+
+    }
+
+    & fieldset:not(.form-header) {
+        display: flex;
+        flex-direction: column;
+
+        & input {
+            padding: 0.75rem;
+        }
+    }
+
+    .nextto {
+        width: 100%;
+        margin-right: 0;
+        display: flex;
+        flex-direction: row;
+
+        & fieldset {
+            display: flex;
+            flex-direction: column;
+        }
+    }
 }
 
 .results {
     display: flex;
-    flex: 55;
-
     flex-direction: column;
-
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
-    background-color: var(--color-slate900, hsl(202, 55%, 16%));
+    width: 50%;
+    padding: 2rem;
 
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    border-bottom-left-radius: 4rem;
+    color: var(--color-slate500, hsl(200, 24%, 40%));
 
+    background-color: var(--color-slate900, hsl(200, 26%, 54%));
+
+    border-bottom-left-radius: 3rem;
+
+    & h2 {
+        color: var(--color-white, hsl(0, 0%, 100%));
+    }
     & p {
         text-align: center;
     }
+}
+
+input {
+    cursor: pointer;
 }
 
 .attribution {
@@ -106,4 +223,31 @@ h2, strong {
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        background-color: var(--color-white, hsl(0, 0%, 100%));
+        flex-wrap: wrap;
+    }
+
+    .calculator, .results {
+        width: 100%;
+        border-radius: 1rem;
+    }
+
+    .calculator {
+        .nextto fieldset {
+            flex-basis: 50%;
+        }
+    }
+
+    .results {
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+
+    form {
+        width: 100%;
+    }
 }
