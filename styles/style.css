@@ -266,7 +266,7 @@ body {
             margin-top: 2.25rem;;
 
             border-radius: 0.25rem;
-            box-shadow: 0 -3px var(--color-lime, hls(61, 70%, 52%));
+            border-top: 3px solid var(--color-lime);
 
             color: var(--color-slate300, hsl(203, 41%, 72%));
             background-color: var(--color-result-box, hsl(202.29, 55.56%, 12.35%));
@@ -321,6 +321,10 @@ body {
         margin-right: 0;
         padding-left: 0;
         padding-right: 0;
+    }
+
+    .counted {
+        padding: 0.25rem 2rem;
     }
     
     fieldset {
