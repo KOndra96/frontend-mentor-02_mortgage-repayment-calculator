@@ -1,6 +1,6 @@
 # Frontend Mentor - Mortgage repayment calculator
 
-This is my solution of a challenge: [Frontend Mentor - Mortgage Repayment Calculator](https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK73). It's a *LEVEL 2 - JUNIOR* challenge.
+This is my solution of a challenge: [Frontend Mentor - Mortgage Repayment Calculator](https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK73). It's a **LEVEL 2 - JUNIOR** challenge.
 
 **To finish this challenge, I needed to have basic HTML, CSS and JavaScript knowledge.**
 
